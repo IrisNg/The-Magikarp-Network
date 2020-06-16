@@ -47,6 +47,7 @@
   },
   "dependencies": {
     "normalize.css": "^8.0.1",
-    "vue": "^2.6.11"
+    "vue": "^2.6.11",
+    "vue-router": "^3.3.4"
   }
 }

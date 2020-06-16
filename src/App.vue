@@ -9,6 +9,7 @@
       <div class="background-img"></div>
 
       <Hello></Hello>
+      <router-view></router-view>
     </div>
     <!-- <router-view/> -->
   </div>

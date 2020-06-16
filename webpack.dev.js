@@ -13,6 +13,9 @@ module.exports = merge(common, {
     path: path.resolve(__dirname, 'dist'),
     filename: 'assets/scripts/[name].js'
   },
+  devServer: {
+    historyApiFallback: true,
+  },
   plugins: [
     new HotModuleReplacementPlugin(),
     new VueLoaderPlugin(),
