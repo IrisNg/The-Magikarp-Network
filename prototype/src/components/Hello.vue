@@ -7,12 +7,20 @@
 
 <script>
 // import $ from "jquery";
+import axios from "axios";
 
 export default {
   mounted() {
     console.log("component mounted?");
   },
   methods: {
+    fetchApi() {
+      axios.post("api/fetch.json").then(res => {
+        console.log("ajax", res.data);
+      }).catch((err)=>{
+        console.log('ajax err', err)
+      });
+    }
     // fetchApi() {
     //   $.ajax({
     //     method: "GET",

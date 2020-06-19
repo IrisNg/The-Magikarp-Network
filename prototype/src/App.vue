@@ -4,12 +4,12 @@
       <!-- <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>-->
       <p>HELLO THERE</p>
-      <i class="icon-edit-pencil"></i>
-      <img src="./assets/images/parsed-image.png" />
-      <div class="background-img"></div>
+      <i class="icon-edit-pencil" />
+      <img src="./assets/images/parsed-image.png">
+      <div class="background-img" />
 
-      <Hello></Hello>
-      <router-view></router-view>
+      <Hello />
+      <router-view />
     </div>
     <!-- <router-view/> -->
   </div>

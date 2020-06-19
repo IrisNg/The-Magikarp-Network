@@ -15,6 +15,11 @@ module.exports = merge(common, {
   },
   devServer: {
     historyApiFallback: true,
+    setup(app) {
+      app.post('*', (req, res) => {
+        res.redirect(req.originalUrl)
+      })
+    }
   },
   plugins: [
     new HotModuleReplacementPlugin(),
