@@ -36,7 +36,13 @@ module.exports = {
               url: false,
             }
           },
-          'sass-loader'
+          {
+            loader: 'sass-loader',
+            // options: {
+            // prependData: `@import "@/assets/styles/testing.scss";`
+            // }
+          }
+          // 'sass-loader'
         ]
       },
       {

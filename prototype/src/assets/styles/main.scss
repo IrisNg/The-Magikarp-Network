@@ -3,14 +3,16 @@
 
 // Import node_modules styles
 
+
 // Fonts
 // @import url("https://fonts.googleapis.com/css?family=Lato:300,400,600,700,900|Open+Sans:300,400,600,700,900&display=swap");
 
+
 // Import Common
-@import "common/mixins";
-@import "common/config";
 @import "common/icons";
-@import "common/helpers";
+@import "common/mixins";
+@import "common/variables";
+// @import "common/helpers";
 
 // @import "print";
 
@@ -241,9 +243,12 @@ html.freeze-bg--scrollable-popup {
   }
 }
 
-// .background-img {
-//   background-image: url("../images/copied-image.png");
-// }
+.background-img {
+  background-image: url("../images/copied-image.png");
+  background-position: center center;
+  width: 500px;
+  height: 500px;
+}
 
 /*========================================================================
 >> Animations
