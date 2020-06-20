@@ -30,7 +30,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../assets/styles/shared.scss";
 
 .nav-bar {
   position: fixed;
@@ -39,7 +38,7 @@ export default {
 
   &__links-list {
     i.icon {
-      font-size: calc-em(60px);
+      font-size: calc-em(90px);
 
       // @include centering-the-unknown();
     }

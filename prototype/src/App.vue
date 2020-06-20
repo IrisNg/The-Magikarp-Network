@@ -2,16 +2,15 @@
   <div id="app">
     <nav-bar />
     <router-view />
-<div class="background-img" />
-
+    <div class="background-img" />
     <!-- <div id="nav"> -->
-      <!-- <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>-->
-      <!-- <p>HELLO THERE</p>
+    <!-- <router-link to="/">Home</router-link> |
+    <router-link to="/about">About</router-link>-->
+    <!-- <p>HELLO THERE</p>
       <i class="icon-edit-pencil" />
       <img src="./assets/images/parsed-image.png" />
-      <div class="background-img" /> -->
-      <!-- <Hello /> -->
+    <div class="background-img" />-->
+    <!-- <Hello /> -->
     <!-- </div> -->
     <!-- <router-view/> -->
   </div>
@@ -30,7 +29,6 @@ export default {
 </script>
 
 <style lang="scss">
-
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -52,3 +50,4 @@ export default {
   }
 }
 </style>
+

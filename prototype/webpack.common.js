@@ -9,17 +9,14 @@ module.exports = {
   },
   module: {
     noParse: /^(vue|vue-router|vuex|vuex-router-sync)$/,
-    rules: [
-      {
+    rules: [{
         test: /\.js$/,
-        use: [
-          {
-            loader: 'babel-loader',
-            options: {
-              presets: ['@babel/preset-env']
-            }
+        use: [{
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env']
           }
-        ]
+        }]
       },
       {
         test: /\.vue$/,
@@ -34,15 +31,26 @@ module.exports = {
             loader: 'css-loader',
             options: {
               url: false,
+              sourceMap: true
             }
           },
           {
             loader: 'sass-loader',
-            // options: {
-            // prependData: `@import "@/assets/styles/testing.scss";`
-            // }
-          }
-          // 'sass-loader'
+            options: {
+              sourceMap: true
+            }
+          },
+          {
+            loader: 'sass-resources-loader',
+            options: {
+              sourceMap: true,
+              resources: [
+                path.resolve(__dirname, 'src/assets/styles/common/_variables.scss'),
+                path.resolve(__dirname, 'src/assets/styles/common/_mixins.scss'),
+                path.resolve(__dirname, 'src/assets/styles/common/_helpers.scss'),
+              ]
+            },
+          },
         ]
       },
       {
@@ -53,23 +61,27 @@ module.exports = {
             loader: 'css-loader',
             options: {
               url: false,
+              sourceMap: true
             }
           },
-          'sass-loader'
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true
+            }
+          },
         ]
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              outputPath: 'assets/images',
-              name: '[name].[contenthash].[ext]',
-              esModule: false,
-            }
+        use: [{
+          loader: 'file-loader',
+          options: {
+            outputPath: 'assets/images',
+            name: '[name].[contenthash].[ext]',
+            esModule: false,
           }
-        ]
+        }]
       },
     ]
   },
