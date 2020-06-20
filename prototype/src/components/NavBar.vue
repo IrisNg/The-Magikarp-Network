@@ -11,37 +11,36 @@
 </template>
 
 <script>
-export default {
-  data() {
-    return {
-      links: [
-        {
-          url: "/scheduler",
-          icon: "icon-calendar"
-        },
-        {
-          url: "/todo",
-          icon: "icon-list-ol"
-        }
-      ]
-    };
-  }
-};
+  export default {
+    data() {
+      return {
+        links: [
+          {
+            url: '/scheduler',
+            icon: 'icon-calendar',
+          },
+          {
+            url: '/todo',
+            icon: 'icon-list-ol',
+          },
+        ],
+      };
+    },
+  };
 </script>
 
 <style lang="scss" scoped>
+  .nav-bar {
+    position: fixed;
+    left: 30px;
+    top: 30%;
 
-.nav-bar {
-  position: fixed;
-  left: 30px;
-  top: 30%;
+    &__links-list {
+      i.icon {
+        font-size: calc-em(90px);
 
-  &__links-list {
-    i.icon {
-      font-size: calc-em(90px);
-
-      // @include centering-the-unknown();
+        // @include centering-the-unknown();
+      }
     }
   }
-}
 </style>

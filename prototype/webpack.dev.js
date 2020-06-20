@@ -11,15 +11,16 @@ module.exports = merge(common, {
   mode: 'development',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'assets/scripts/[name].js'
+    filename: 'assets/scripts/[name].js',
   },
   devServer: {
     historyApiFallback: true,
     setup(app) {
+      //Redirect POST request to the same url in GET
       app.post('*', (req, res) => {
-        res.redirect(req.originalUrl)
-      })
-    }
+        res.redirect(req.originalUrl);
+      });
+    },
   },
   plugins: [
     new HotModuleReplacementPlugin(),
@@ -28,7 +29,7 @@ module.exports = merge(common, {
       showErrors: true,
       cache: true,
       template: path.resolve(__dirname, 'public/index.html'),
-      favicon: "public/favicon.ico"
+      favicon: 'public/favicon.ico',
     }),
     new CopyPlugin({
       patterns: [
@@ -37,8 +38,6 @@ module.exports = merge(common, {
         { from: 'src/api', to: 'api' },
       ],
     }),
-    new MiniCssExtractPlugin({
-      filename: 'assets/styles/[name].css'
-    }),
-  ]
-})
+    new MiniCssExtractPlugin({ filename: 'assets/styles/[name].css' }),
+  ],
+});

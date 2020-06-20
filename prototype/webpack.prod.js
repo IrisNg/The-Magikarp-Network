@@ -5,9 +5,9 @@ const { VueLoaderPlugin } = require('vue-loader');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
-const TerserPlugin = require('terser-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const imageminMozjpeg = require('imagemin-mozjpeg');
 const imageminPngquant = require('imagemin-pngquant');
@@ -16,19 +16,19 @@ module.exports = merge(common, {
   mode: 'production',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'assets/scripts/[name].[hash].js'
+    filename: 'assets/scripts/[name].[hash].js',
   },
   plugins: [
     new CleanWebpackPlugin(),
     new VueLoaderPlugin(),
     new HTMLWebpackPlugin({
       template: path.resolve(__dirname, 'public/index.html'),
-      favicon: "public/favicon.ico"
+      favicon: 'public/favicon.ico',
     }),
     new CopyPlugin({
       patterns: [
         { from: 'src/assets/icomoon/fonts', to: 'assets/fonts' },
-        { from: 'src/assets/images/copy', to: 'assets/images' }
+        { from: 'src/assets/images/copy', to: 'assets/images' },
       ],
     }),
     new ImageminPlugin({
@@ -36,20 +36,20 @@ module.exports = merge(common, {
       plugins: [
         imageminMozjpeg({
           quality: 70,
-          progressive: true
+          progressive: true,
         }),
         imageminPngquant({
           quality: [0.7, 0.9],
           speed: 1,
-          dithering: 1
-        })
-      ]
+          dithering: 1,
+        }),
+      ],
     }),
     new MiniCssExtractPlugin({
-      filename: 'assets/styles/[name].[hash].css'
+      filename: 'assets/styles/[name].[hash].css',
     }),
   ],
   optimization: {
-    minimizer: [new OptimizeCssAssetsPlugin(), new TerserPlugin()]
-  }
-})
+    minimizer: [new OptimizeCssAssetsPlugin(), new TerserPlugin()],
+  },
+});
