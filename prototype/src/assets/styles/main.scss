@@ -195,9 +195,13 @@ body {
   color: $black;
 }
 
-#main {
-  background-color: $white;
+#app {
+  height: 100%;
+    background-color: $white;
+}
 
+#main {
+padding-left: 80px;
 }
 
 button,

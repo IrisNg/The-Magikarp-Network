@@ -32,7 +32,7 @@ export default {
 <style lang="scss" scoped>
 .nav-bar {
   position: fixed;
-  left: 30px;
+  left: 22px;
   top: 30%;
   z-index: 100;
 
@@ -46,7 +46,7 @@ export default {
     $hoverOuterWidth: 5px;
 
     li {
-      margin-bottom: 20px;
+      margin-bottom: 22px;
     }
 
     a {
