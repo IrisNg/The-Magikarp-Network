@@ -93,6 +93,7 @@
 
 <style lang="scss" scoped>
   .calendar {
+    padding: 0 20px;
     table {
       width: 100%;
       border-collapse: collapse;

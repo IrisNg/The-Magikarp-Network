@@ -19,8 +19,8 @@
   @include clearfix;
 }
 
-.clearfix {
-  @extend %clearfix;
+%plainlist {
+  @include plainlist();
 }
 
 %cover {
@@ -31,33 +31,6 @@
   @include visuallyhidden;
 }
 
-.visuallyhidden {
-  @extend %visuallyhidden;
-}
-
-.no-desktop {
-  @include desktop {
-    display: none !important;
-  }
-}
-
-.no-mobile {
-  @include mobile {
-    display: none !important;
-  }
-}
-
-.desktop-only {
-  @include mobile {
-    display: none !important;
-  }
-  @include tablet {
-    display: none !important;
-  }
-}
-
-.handheld-only {
-  @include desktop {
-    display: none !important;
-  }
+%objectfit {
+  @include objectfit();
 }

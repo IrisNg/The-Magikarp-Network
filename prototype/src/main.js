@@ -1,6 +1,7 @@
 import './assets/styles/main.scss'
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import VueCarousel from 'vue-carousel'
 import App from './App.vue'
 import {routes} from './routes'
 // import store from './store'
@@ -8,6 +9,7 @@ import {routes} from './routes'
 // Vue.config.productionTip = false
 
 Vue.use(VueRouter)
+Vue.use(VueCarousel)
 
 const router = new VueRouter({
   routes,
