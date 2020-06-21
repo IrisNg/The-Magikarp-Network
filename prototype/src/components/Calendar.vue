@@ -23,8 +23,8 @@
   import Date from './Date.vue';
   dayjs.extend(customParseFormat);
 
-  function getRenderObj(dateObj, index) {
-    return dateObj ? { id: dateObj.format('DD/MM/YYYY'), date: dateObj.get('date') } : { id: `empty-${index}`, date: '' };
+  function getRenderObj(dayjsDateObj, index) {
+    return dayjsDateObj ? { id: dayjsDateObj.format('DD/MM/YYYY'), date: dayjsDateObj.get('date') } : { id: `empty-${index}`, date: '' };
   }
 
   function getCalendarTable(dayjsMonthObj) {
@@ -46,10 +46,10 @@
 
     // console.log('datesList', datesList);
 
-    //Format list into table format [[dayjsObjs in week 1], [week 2], ...]
+    //Format list into table format [[dayjsDateObjs in week 1], [week 2], ...]
     let { table } = datesList.reduce(
-      (acc, dateObj, index) => {
-        acc.holder.push(getRenderObj(dateObj, index));
+      (acc, dayjsDateObj, index) => {
+        acc.holder.push(getRenderObj(dayjsDateObj, index));
 
         let isLastDayOfWeek = (index + 1) % 7 === 0,
           isLastItem = index === datesList.length - 1;

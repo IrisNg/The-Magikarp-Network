@@ -50,11 +50,22 @@ $fontPath: '../fonts';
 
 
 /* =======================================================================
-00 Imported Icomoon Icons
+>> Imported Icomoon Icons
 ========================================================================== */
+
+.icon-add:before {
+  content: "\e900";
+}
+.icon-triangle-left:before {
+  content: "\e901";
+}
+.icon-triangle-right:before {
+  content: "\e902";
+}
 .icon-calendar:before {
   content: "\f073";
 }
 .icon-list-ol:before {
   content: "\f0cb";
 }
+
