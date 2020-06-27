@@ -11,6 +11,8 @@ import {routes} from './routes'
 Vue.use(VueRouter)
 Vue.use(VueCarousel)
 
+
+
 const router = new VueRouter({
   routes,
   mode: 'history',
@@ -24,6 +26,8 @@ const router = new VueRouter({
     return {x:0,y:0}
   }
 })
+
+export const EventBus = new Vue()
 
 new Vue({
   router,
