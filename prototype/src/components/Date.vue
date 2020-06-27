@@ -6,7 +6,7 @@
       </h3>
       <ul>
         <li v-for="todo in list" :key="todo" class="date__todo">
-          <input type="text" :value="todo">
+          <textarea ref="todo" :value="todo" rows="1" />
         </li>
       </ul>
     </div>
@@ -45,6 +45,14 @@
           } else {
             this.list = [];
           }
+
+          setTimeout(() => {
+            this.$refs.todo.forEach((todo) => {
+              //If /n using shift+enter, increase row height of textarea
+              let adjustedRowHeight = parseInt(todo.rows, 10) + 1;
+              todo.rows = adjustedRowHeight.toString();
+            });
+          }, 3000);
         } catch (err) {
           console.log('error!', err);
         }
@@ -60,9 +68,9 @@
     text-align: left;
     padding: 5px;
 
-&__wrapper {
-  display: flex;
-}
+    &__wrapper {
+      display: flex;
+    }
     &__date {
       margin: 0;
 
@@ -73,13 +81,13 @@
       padding-right: 5px;
     }
     li {
-      font-size: calc-em(12px);
+      font-size: calc-em(11px);
 
-      input {
+      textarea {
         width: 100%;
         background: none;
         border: none;
-        
+        resize: none;
       }
     }
   }
